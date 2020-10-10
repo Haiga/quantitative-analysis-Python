@@ -1,0 +1,10 @@
+Ler arquivo de dataset (ler o treino e o teste junto e juntar?, ou só o treino?)
+
+Utilziar notebook? Pode ficar mais fácil fazer apresentação depois
+
+fazer um corte aleatório nas linhas (essa será a replicação)
+
+Pegar cada coluna por vez, avaliar cada uma para as combinações das diferentes métricas que eu tenho
+##Note: Se cada algoritmo não interfere na minha métricqde avaliação então cada alg pode ser uma replicação
+
+Salvar em um arquivo excel, ou tabulado, para facilitar os cálculos do projeto fatorial
