@@ -19,7 +19,7 @@ coll = "web10k"
 num_features = 136
 
 fold = 1
-mask = "1" * num_features
+mask = ("1" * 95) + "0" * (136 - 95)
 test = dataset()
 train = dataset()
 # testFile = "E:/BCC/Disciplinas Faculdade/TCC/tcc_l2r/dataset/" + coll + "/Fold" + str(fold) + "/Norm.test.txt"
@@ -32,11 +32,12 @@ else:
 train.x, train.y, train.q = load_L2R_file(trainFile, mask)
 
 vs = []
+#colocar 5 a 9 se demorar
 end = 14
 if 'web10k' in coll:
-    f = open('./cluster/web10k/result.txt', 'w+')
+    f = open('./cluster/web10k/result_pt.txt', 'w+')
 else:
-    f = open('./cluster/td/result.txt', 'w+')
+    f = open('./cluster/td/result_pt.txt', 'w+')
 
 num_amostras = train.x.shape[0]
 num_algoritms = train.x.shape[1]
@@ -62,9 +63,9 @@ for i in range(8, end):
     v = silhouette_score(my_train, y)
 
     if 'web10k' in coll:
-        flabels = open('./cluster/web10k/' + str(i) + '.txt', 'w+')
+        flabels = open('./cluster/web10k/' + str(i) + '_pt.txt', 'w+')
     else:
-        flabels = open('./cluster/' + str(i) + '.txt', 'w+')
+        flabels = open('./cluster/' + str(i) + '_pt.txt', 'w+')
 
     num_itens = len(my_slice_docs)
     for ic in range(num_itens):
