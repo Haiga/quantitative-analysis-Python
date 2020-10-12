@@ -33,7 +33,8 @@ train.x, train.y, train.q = load_L2R_file(trainFile, mask)
 
 vs = []
 #colocar 5 a 9 se demorar
-end = 14
+# end = 14
+end = 9
 if 'web10k' in coll:
     f = open('./cluster/web10k/result_pt.txt', 'w+')
 else:
@@ -50,7 +51,8 @@ temp_dataset.x = train.x[my_slice_docs, :]
 temp_dataset.y = train.y[my_slice_docs]
 temp_dataset.q = train.q[my_slice_docs]
 
-for i in range(8, end):
+# for i in range(8, end):
+for i in range(2, end):
     my_train = np.copy(temp_dataset.x)
     print('...')
     print(i)
